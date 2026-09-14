@@ -1,18 +1,40 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "ui": "tui",
   "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/*.test.ts",
+        "!**/*.test.tsx",
+        "!**/*.spec.ts",
+        "!**/__tests__/**",
+        "!**/*.md"
+      ],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "inputs": ["$TURBO_DEFAULT$", "eslint.config.*", ".eslintrc*"]
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig*.json"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "vitest.config.*", "jest.config.*"],
+      "outputs": ["coverage/**"]
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "playwright.config.*", "cypress.config.*"],
+      "outputs": ["playwright-report/**", "cypress/videos/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**", "dist/**"]
-    },
-    "lint": {},
-    "type-check": {},
-    "test": {},
-    "test:e2e": {}
+    }
   }
 }
