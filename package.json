@@ -1,5 +1,5 @@
 {
-  "name": "odyssey",
+  "name": "nguyenthanhduyofficial",
   "version": "1.0.0",
   "description": "",
   "author": "nguyenthanhduyofficial",
@@ -19,8 +19,8 @@
     "@changesets/cli": "^3.0.1",
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
-    "@odyssey/eslint-config": "workspace:*",
-    "@odyssey/typescript-config": "workspace:*",
+    "@nguyenthanhduyofficial/eslint-config": "workspace:*",
+    "@nguyenthanhduyofficial/typescript-config": "workspace:*",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
     "@typescript-eslint/parser": "^8.67.0",

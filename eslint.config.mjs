@@ -1,4 +1,4 @@
-import { libraryConfig } from '@odyssey/eslint-config/library';
+import { libraryConfig } from '@nguyenthanhduyofficial/eslint-config/library';
 import tsParser from '@typescript-eslint/parser';
 
 export default [
