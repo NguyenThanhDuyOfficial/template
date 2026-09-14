@@ -20,9 +20,10 @@ jobs:
           node-version: 22
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/setup@v1
         with:
-          version: 8
+          runtime: node@22
+          cache: true
 
       - name: Get pnpm store directory
         id: pnpm-cache
